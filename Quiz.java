@@ -20,7 +20,7 @@ public class Quiz
 		initData();
 		readFileIntoList();
 		startQuiz();
-		//printResults();
+		endQuiz();
 	}
 
 	private static void initData() 
@@ -60,16 +60,27 @@ public class Quiz
 	}
 
 	private static void startQuiz() {
-		for(String line : list) 
-		{
+		//randomly get line instead of same order each time
+		while(list.size() > 0) {
+			int random = randomizer.nextInt(list.size());
+			String line = list.get(random);
+			list.remove(random);
+
 			String[] tokens = line.split("\\?");
 			System.out.println(tokens[0]+"?");
 			waitForEnterKey();
 			System.out.println(tokens[1].substring(1)+"\n");
 		}
+		/*for(String line : list) 
+		{
+			String[] tokens = line.split("\\?");
+			System.out.println(tokens[0]+"?");
+			waitForEnterKey();
+			System.out.println(tokens[1].substring(1)+"\n");
+		}*/
 	}
 
-	/// Wait until enter key is pressed
+	/// Wait until enter key is presse
 	private static void waitForEnterKey() {
 		while(true) {
 			String enterKey = "enterKey";
@@ -78,5 +89,9 @@ public class Quiz
 				return;
 			}
 		}
+	}
+
+	private static void endQuiz() {
+		System.out.println("\n-----------------\nQuiz is complete.\n-----------------");
 	}
 }
