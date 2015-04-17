@@ -1,0 +1,1 @@
+What is the difference between AH and ESP? AH provides integrity and ESP provides integrity and optional encrpytion.
