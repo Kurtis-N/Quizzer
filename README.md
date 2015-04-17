@@ -1,2 +1,2 @@
 # Quizzer
-Quiz program used for studying or other memorization tasks
+A Quiz program used for studying or other memorization tasks
