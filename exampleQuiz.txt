@@ -1,1 +1,3 @@
-What is the difference between AH and ESP? AH provides integrity and ESP provides integrity and optional encrpytion.
+What are the two implementations of IPsec and how do they differ? AH (Authentication Header) which provides integrity, and ESP (Encapsulated Security Packet) which provides integrity and optional encrpytion.
+What are the two modes of using an implementation IPsec? Transport Mode - which appends IPsec headers onto the IP headers but before the rest of the packet.  Tunnel Mode - Creates a new IP header with IPsec header ontop of the IP packet.
+What is Kerberos - (1) A network authentication protocol. (2) The hound of Hades. (3) The bad guys from Mass Effect 3 (4) The 4th moon of Jupiter? Yes.

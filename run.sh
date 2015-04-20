@@ -1,3 +1,4 @@
 #!/bin/bash
 
-java Quiz
+#first arg is the file specified
+java Quiz $1

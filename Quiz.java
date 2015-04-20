@@ -13,14 +13,23 @@ public class Quiz
 	private static int correctAnswers;
 	private static Random randomizer;
 	private static Scanner scanner;
+	//private static String filename = "exampleQuiz.txt";
 	private static String filename = "exampleQuiz.txt";
 
 	public static void main(String [] args) 
 	{
+		if(args.length == 0) 
+		{
+			System.out.println("No file specified, using default:" + filename);
+		}
+		else
+		{
+			filename = args[0];
+			System.out.println("Using file " + filename);
+		}
 		initData();
 		readFileIntoList();
 		startQuiz();
-		endQuiz();
 	}
 
 	private static void initData() 
@@ -60,6 +69,7 @@ public class Quiz
 	}
 
 	private static void startQuiz() {
+		printStartQuiz();
 		//randomly get line instead of same order each time
 		while(list.size() > 0) {
 			int random = randomizer.nextInt(list.size());
@@ -71,6 +81,7 @@ public class Quiz
 			waitForEnterKey();
 			System.out.println(tokens[1].substring(1)+"\n");
 		}
+		//ask questions in order listed
 		/*for(String line : list) 
 		{
 			String[] tokens = line.split("\\?");
@@ -78,6 +89,7 @@ public class Quiz
 			waitForEnterKey();
 			System.out.println(tokens[1].substring(1)+"\n");
 		}*/
+		printEndQuiz();
 	}
 
 	/// Wait until enter key is presse
@@ -91,7 +103,13 @@ public class Quiz
 		}
 	}
 
-	private static void endQuiz() {
+	private static void printStartQuiz() 
+	{
+		System.out.println("\n-----------------\nQuiz Starting.\n-----------------\n");
+	}
+
+	private static void printEndQuiz() 
+	{
 		System.out.println("\n-----------------\nQuiz is complete.\n-----------------");
 	}
 }
