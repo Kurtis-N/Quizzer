@@ -77,6 +77,13 @@ public class Quiz
 			list.remove(random);
 
 			String[] tokens = line.split("\\?");
+			if(tokens.length < 2) 
+			{
+				System.out.println("\nLine in file is not formatted correctly.");
+				System.out.println("Line: " + line);
+				System.out.println("-----------------\nProgram quitting.\n-----------------\n");
+				System.exit(3);
+			}
 			System.out.println(tokens[0]+"?");
 			waitForEnterKey();
 			System.out.println(tokens[1].substring(1)+"\n");
